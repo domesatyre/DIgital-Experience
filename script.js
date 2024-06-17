@@ -5,14 +5,14 @@ let frameIndex = 1;
 let prevFrameIndex = 156;
 let nextFrameIndex = 2;
 
-// Chemin vers le dossier des images
-const imagePath = 'image/'; // attention au slash à la fin
+// Chemin vers les images
+const imagePath = ''; // plus besoin du dossier image/
 
 // Précharger les images précédentes et suivantes
 const prevFrameElement = new Image();
 const nextFrameElement = new Image();
-prevFrameElement.src = `${imagePath}ezgif-frame-${prevFrameIndex.toString().padStart(10, '0')}.jpg`;
-nextFrameElement.src = `${imagePath}ezgif-frame-${nextFrameIndex.toString().padStart(10, '0')}.jpg`;
+prevFrameElement.src = `ezgif-frame-${prevFrameIndex.toString().padStart(10, '0')}.jpg`;
+nextFrameElement.src = `ezgif-frame-${nextFrameIndex.toString().padStart(10, '0')}.jpg`;
 
 frameContainer.addEventListener('wheel', (event) => {
   event.preventDefault(); // empêcher le défilement par défaut
@@ -44,12 +44,12 @@ frameContainer.addEventListener('wheel', (event) => {
   }
 
   // Précharger les images précédentes et suivantes
-  prevFrameElement.src = `${imagePath}ezgif-frame-${prevFrameIndex.toString().padStart(3, '0')}.jpg`;
-  nextFrameElement.src = `${imagePath}ezgif-frame-${nextFrameIndex.toString().padStart(3, '0')}.jpg`;
+  prevFrameElement.src = `ezgif-frame-${prevFrameIndex.toString().padStart(3, '0')}.jpg`;
+  nextFrameElement.src = `ezgif-frame-${nextFrameIndex.toString().padStart(3, '0')}.jpg`;
 
   // Mettre à jour l'image affichée
   const frameElement = document.querySelector('.frame');
-  frameElement.src = `${imagePath}ezgif-frame-${frameIndex.toString().padStart(3, '0')}.jpg`;
+  frameElement.src = `ezgif-frame-${frameIndex.toString().padStart(3, '0')}.jpg`;
 
   console.log(`frameIndex: ${frameIndex}`);
   console.log(`prevFrameIndex: ${prevFrameIndex}`);
